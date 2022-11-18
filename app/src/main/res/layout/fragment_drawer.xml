@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
-    android:focusable="true"
-    tools:context=".fragments.DrawerFragment">
+    tools:context=".fragments.drawerComponents.DrawerFragment">
 
     <LinearLayout
         android:id="@+id/menuItems"
@@ -55,8 +53,8 @@
                 android:id="@+id/mobileNumberText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
                 android:layout_marginStart="20dp"
+                android:paddingVertical="5dp"
                 android:text="8801647803753"
                 app:layout_constraintBottom_toTopOf="@+id/changeCompanyText"
                 app:layout_constraintStart_toEndOf="@id/profileIcon"
@@ -79,7 +77,7 @@
             android:id="@+id/itemLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfItem"
@@ -107,7 +105,7 @@
             android:id="@+id/businessDashbpardLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfBusinessDashboard"
@@ -135,7 +133,7 @@
             android:id="@+id/reportsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfReports"
@@ -163,7 +161,7 @@
             android:id="@+id/saleslayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfSales"
@@ -171,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/salesInvoicerecycler"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -181,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Sales"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/salesInvoicerecycler"
                 app:layout_constraintStart_toEndOf="@+id/iconOfSales"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -191,9 +189,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/salesInvoicerecycler"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/salesInvoicerecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iconOfSales"
+                tools:itemCount="2"
+                tools:listitem="@layout/itemview_drawer_rv"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -201,7 +212,7 @@
             android:id="@+id/purchaseLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfPurchase"
@@ -209,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/purchaseRecycler"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -219,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Purchase"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/purchaseRecycler"
                 app:layout_constraintStart_toEndOf="@+id/iconOfPurchase"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -229,16 +240,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/purchaseRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/purchaseRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iconOfPurchase"
+                tools:itemCount="2"
+                tools:listitem="@layout/itemview_drawer_rv"
+                tools:visibility="visible" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfExpense"
@@ -265,7 +288,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_baseline_menu_24"
+                android:src="@drawable/ic_baseline_add_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -273,9 +296,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cashAndBankLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/cashAndBankOficon"
@@ -283,7 +307,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/cashAndBankRecycler"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -293,7 +317,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Cash &amp; bank"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/cashAndBankRecycler"
                 app:layout_constraintStart_toEndOf="@+id/cashAndBankOficon"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -303,16 +327,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/cashAndBankRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cashAndBankRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cashAndBankOficon"
+                tools:itemCount="2"
+                tools:listitem="@layout/itemview_drawer_rv"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfOnlineStore"
@@ -344,7 +381,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfSync"
@@ -369,9 +406,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfSettings"
@@ -396,9 +434,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/backupandRestoreLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/backupandRestoreOficon"
@@ -406,7 +445,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/backUpandRestoreRecycler"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -416,7 +455,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Backup &amp; Restore"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/backUpandRestoreRecycler"
                 app:layout_constraintStart_toEndOf="@+id/backupandRestoreOficon"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -426,9 +465,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/backUpandRestoreRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/backUpandRestoreRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backupandRestoreOficon"
+                tools:itemCount="2"
+                tools:listitem="@layout/itemview_drawer_rv"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -440,7 +492,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfpremium"
@@ -467,7 +519,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfWhatsAppGreetings"
@@ -494,7 +546,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfshareOnWhatsApp"
@@ -519,9 +571,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/utilitiesLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfUtilities"
@@ -529,7 +582,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/utilitiesRecycler"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -539,7 +592,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Utilities"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/utilitiesRecycler"
                 app:layout_constraintStart_toEndOf="@+id/iconOfUtilities"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -549,16 +602,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/utilitiesRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/utilitiesRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iconOfUtilities"
+                tools:itemCount="2"
+                tools:listitem="@layout/itemview_drawer_rv"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/helpAndSupportLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp">
+            android:paddingVertical="10dp">
 
             <ImageView
                 android:id="@+id/iconOfHelpAndSupport"
@@ -566,7 +633,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/helpAndSupportRecycler"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -576,7 +643,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Help and Support"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/helpAndSupportRecycler"
                 app:layout_constraintStart_toEndOf="@+id/iconOfHelpAndSupport"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -586,9 +653,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/helpAndSupportRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/helpAndSupportRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iconOfHelpAndSupport"
+                tools:itemCount="2"
+                tools:listitem="@layout/itemview_drawer_rv"
+                tools:visibility="visible" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

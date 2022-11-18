@@ -4,23 +4,59 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.navigation.findNavController
 import dev.faddy.vyt1.databinding.ActivityMainBinding
+import dev.faddy.vyt1.fragments.drawerComponents.DrawerHandler
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var drawerHandler: DrawerHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        initView()
+        initClickListener()
+    }
 
-        /*   binding.drawerNav.setNavigationItemSelectedListener {
-               return@setNavigationItemSelectedListener true
-           }
-   */
+    private fun initView() {
+        drawerHandler = DrawerHandler(binding.drawrerInner, this).apply {
+            initAdapters()
+            initRecyclerViews()
+        }
+    }
+
+    private fun initClickListener() {
+        dwawerClicks()
+    }
+
+    private fun dwawerClicks() {
+        binding.drawrerInner.saleslayout.setOnClickListener {
+            drawerHandler.onRecyclerClicked(DrawerHandler.RecyclerLayout.salesInvoicerecycler)
+        }
+        binding.drawrerInner.purchaseLayout.setOnClickListener {
+            drawerHandler.onRecyclerClicked(DrawerHandler.RecyclerLayout.purchaseRecycler)
+        }
+        binding.drawrerInner.cashAndBankLayout.setOnClickListener {
+            drawerHandler.onRecyclerClicked(DrawerHandler.RecyclerLayout.cashAndBankRecycler)
+        }
+        binding.drawrerInner.helpAndSupportLayout.setOnClickListener {
+            drawerHandler.onRecyclerClicked(DrawerHandler.RecyclerLayout.helpAndSupportRecycler)
+        }
+        binding.drawrerInner.utilitiesLayout.setOnClickListener {
+            drawerHandler.onRecyclerClicked(DrawerHandler.RecyclerLayout.utilitiesRecycler)
+        }
+        binding.drawrerInner.backupandRestoreLayout.setOnClickListener {
+            drawerHandler.onRecyclerClicked(DrawerHandler.RecyclerLayout.backUpandRestoreRecycler)
+        }
+        binding.drawrerInner.settingsLayout.setOnClickListener {
+            closeDrawer()
+            findNavController(R.id.fragmentContainerView).navigate(R.id.settingsFragment)
+        }
     }
 
     fun openDrawer() {
@@ -43,14 +79,4 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Clicked on reportsLayout", Toast.LENGTH_SHORT).show()
     }
 
-
-    /*   override fun onOptionsItemSelected(item: MenuItem): Boolean {
-           when (item.itemId) {
-               R.id.home -> {
-                   binding.drawerLayout.openDrawer(GravityCompat.START)
-                   return false
-               }
-           }
-           return false
-       }*/
 }

@@ -10,4 +10,34 @@
         android:name="dev.faddy.vyt1.fragments.dashboard.DashBoardFragment"
         android:label="fragment_dash_board"
         tools:layout="@layout/fragment_dash_board" />
+    <fragment
+        android:id="@+id/drawerFragment"
+        android:name="dev.faddy.vyt1.fragments.drawerComponents.DrawerFragment"
+        android:label="fragment_drawer"
+        tools:layout="@layout/fragment_drawer">
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="dev.faddy.vyt1.fragments.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_partiesSettingsFragment"
+            app:destination="@id/partiesSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/partiesSettingsFragment"
+        android:name="dev.faddy.vyt1.fragments.settings.PartiesSettingsFragment"
+        android:label="fragment_parties_settings"
+        tools:layout="@layout/fragment_parties_settings" >
+        <action
+            android:id="@+id/action_partiesSettingsFragment_to_partyAddtionalFieldsFragment"
+            app:destination="@id/partyAddtionalFieldsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/partyAddtionalFieldsFragment"
+        android:name="dev.faddy.vyt1.fragments.settings.PartyAddtionalFieldsFragment"
+        android:label="fragment_party_addtional_fields"
+        tools:layout="@layout/fragment_party_addtional_fields" />
 </navigation>

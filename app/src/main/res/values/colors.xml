@@ -9,9 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="blue">#0277BD</color>
+    <color name="blue_10p">#1A0277BD</color>
     <color name="red">#C62828</color>
 
     <color name="default_text_color">#808080</color>
+    <color name="gray_10p">#1A8C8C8C</color>
     <color name="gray_30p">#4D8C8C8C</color>
     <color name="green_500">#4CAF50</color>
     <color name="green_700">#388E3C</color>

@@ -21,7 +21,7 @@
         android:id="@+id/settingsFragment"
         android:name="dev.faddy.vyt1.fragments.settings.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" >
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_partiesSettingsFragment"
             app:destination="@id/partiesSettingsFragment" />
@@ -30,7 +30,7 @@
         android:id="@+id/partiesSettingsFragment"
         android:name="dev.faddy.vyt1.fragments.settings.PartiesSettingsFragment"
         android:label="fragment_parties_settings"
-        tools:layout="@layout/fragment_parties_settings" >
+        tools:layout="@layout/fragment_parties_settings">
         <action
             android:id="@+id/action_partiesSettingsFragment_to_partyAddtionalFieldsFragment"
             app:destination="@id/partyAddtionalFieldsFragment" />

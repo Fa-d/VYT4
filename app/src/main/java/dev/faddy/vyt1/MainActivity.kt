@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         binding.drawerLayout.openDrawer(GravityCompat.START)
     }
 
-    public fun closeDrawer() {
+    fun closeDrawer() {
         binding.drawerLayout.closeDrawer(GravityCompat.START)
     }
 

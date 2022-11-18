@@ -6,6 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".fragments.parties.PartiesFragment">
 
+    <ImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@+id/newPartyCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/newPartyCardView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Search Party"
+        app:layout_constraintBottom_toBottomOf="@+id/searchIcon"
+        app:layout_constraintStart_toEndOf="@+id/searchIcon"
+        app:layout_constraintTop_toTopOf="@+id/searchIcon" />
+
+    <ImageView
+        android:id="@+id/filterIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@+id/newPartyCardView"
+        app:layout_constraintEnd_toStartOf="@+id/newPartyCardView"
+        app:layout_constraintTop_toTopOf="@+id/newPartyCardView" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/newPartyCardView"
         android:layout_width="wrap_content"
@@ -14,7 +43,7 @@
         android:layout_marginEnd="15dp"
         android:foreground="@drawable/backrectangle_blue_blue_fill"
         app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/menuIcon"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -31,6 +60,17 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="@+id/newPartyCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/newPartyCardView" />
+
+
     <View
         android:id="@+id/dividerView"
         android:layout_width="match_parent"
@@ -45,7 +85,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/partiesRecycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dividerView"

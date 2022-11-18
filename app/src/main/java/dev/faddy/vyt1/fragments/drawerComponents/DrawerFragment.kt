@@ -12,9 +12,6 @@ class DrawerFragment : Fragment() {
 
 
     private lateinit var binding: FragmentDrawerBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -22,7 +19,4 @@ class DrawerFragment : Fragment() {
         return FragmentDrawerBinding.inflate(inflater, container, false).also { binding = it }.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 }

@@ -15,12 +15,12 @@ class DrawerHandler(val binding: FragmentDrawerBinding, val context: Context) {
     private lateinit var utilitiesAdapter: SalesDrawerAdapter
     private lateinit var helpAndSupportAdapter: SalesDrawerAdapter
 
-    private var isSalesRecyclerVisible = false;
-    private var isSCashAndBankRecyclerVisible = false;
-    private var isPurchaseRecyclerVisible = false;
-    private var isBackUpAndRestoreRecyclerVisible = false;
-    private var isUtilitiesRecyclerVisible = false;
-    private var isHelpAndSupportRecyclerVisible = false;
+    private var isSalesRecyclerVisible = false
+    private var isSCashAndBankRecyclerVisible = false
+    private var isPurchaseRecyclerVisible = false
+    private var isBackUpAndRestoreRecyclerVisible = false
+    private var isUtilitiesRecyclerVisible = false
+    private var isHelpAndSupportRecyclerVisible = false
 
 
     fun initAdapters() {

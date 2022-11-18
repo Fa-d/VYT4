@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bulk_paymnet_remainder"
+        android:title="Bulk Payment Remainder" />
+    <item
+        android:id="@+id/bulk_messages"
+        android:title="Bulk Messages" />
+    <item
+        android:id="@+id/party_grouping"
+        android:title="Party Grouping" />
+    <item
+        android:id="@+id/sort_by_name"
+        android:checkable="true"
+        android:title="Sort By Name"
+        app:actionViewClass="com.google.android.material.checkbox.MaterialCheckBox" />
+</menu>

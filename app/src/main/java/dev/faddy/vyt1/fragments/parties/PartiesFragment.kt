@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.faddy.vyt1.R
 import dev.faddy.vyt1.databinding.FragmentPartiesBinding
@@ -60,6 +61,9 @@ class PartiesFragment : Fragment() {
                 }
                 else -> false
             }
+        }
+        binding.newPartyText.setOnClickListener {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_addNewPartyFragment)
         }
     }
 

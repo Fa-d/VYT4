@@ -9,7 +9,11 @@
         android:id="@+id/dashBoardFragment"
         android:name="dev.faddy.vyt1.fragments.dashboard.DashBoardFragment"
         android:label="fragment_dash_board"
-        tools:layout="@layout/fragment_dash_board" />
+        tools:layout="@layout/fragment_dash_board">
+        <action
+            android:id="@+id/action_dashBoardFragment_to_addNewPartyFragment"
+            app:destination="@id/addNewPartyFragment" />
+    </fragment>
     <fragment
         android:id="@+id/drawerFragment"
         android:name="dev.faddy.vyt1.fragments.drawerComponents.DrawerFragment"
@@ -25,6 +29,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_partiesSettingsFragment"
             app:destination="@id/partiesSettingsFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_itemsSettingsFragment"
+            app:destination="@id/itemsSettingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/partiesSettingsFragment"
@@ -40,4 +47,30 @@
         android:name="dev.faddy.vyt1.fragments.settings.PartyAddtionalFieldsFragment"
         android:label="fragment_party_addtional_fields"
         tools:layout="@layout/fragment_party_addtional_fields" />
+    <fragment
+        android:id="@+id/partiesFragment"
+        android:name="dev.faddy.vyt1.fragments.parties.PartiesFragment"
+        android:label="fragment_parties"
+        tools:layout="@layout/fragment_parties">
+
+    </fragment>
+    <fragment
+        android:id="@+id/addNewPartyFragment"
+        android:name="dev.faddy.vyt1.fragments.parties.addNewParty.AddNewPartyFragment"
+        android:label="fragment_add_new_party"
+        tools:layout="@layout/fragment_add_new_party" />
+    <fragment
+        android:id="@+id/transactionsFragment"
+        android:name="dev.faddy.vyt1.fragments.transactions.TransactionsFragment"
+        android:label="fragment_transactions"
+        tools:layout="@layout/fragment_transactions" />
+    <fragment
+        android:id="@+id/itemsSettingsFragment"
+        android:name="dev.faddy.vyt1.fragments.settings.ItemsSettingsFragment"
+        android:label="fragment_items_settings"
+        tools:layout="@layout/fragment_items_settings" />
+    <fragment
+        android:id="@+id/itemsFragment"
+        android:name="dev.faddy.vyt1.fragments.items.ItemsFragment"
+        android:label="ItemsFragment" />
 </navigation>

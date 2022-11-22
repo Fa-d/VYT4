@@ -50,7 +50,7 @@ class PartiesFragment : Fragment() {
                 R.id.bulk_messages -> true
                 R.id.party_grouping -> true
                 R.id.sort_by_name -> {
-                    item.isChecked = !item.isChecked;
+                    item.isChecked = !item.isChecked
                     item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)
                     item.actionView = View(context)
                     item.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {

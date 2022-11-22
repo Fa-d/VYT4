@@ -57,13 +57,21 @@ class MainActivity : AppCompatActivity() {
             closeDrawer()
             findNavController(R.id.fragmentContainerView).navigate(R.id.settingsFragment)
         }
+        binding.drawrerInner.itemLayout.setOnClickListener {
+            closeDrawer()
+            findNavController(R.id.fragmentContainerView).navigate(R.id.action_dashBoardFragment_to_itemsFragment)
+        }
+        binding.drawrerInner.businessDashbpardLayout.setOnClickListener {
+            closeDrawer()
+            findNavController(R.id.fragmentContainerView).navigate(R.id.action_dashBoardFragment_to_businessDashboardFragment)
+        }
     }
 
     fun openDrawer() {
         binding.drawerLayout.openDrawer(GravityCompat.START)
     }
 
-    fun closeDrawer() {
+    private fun closeDrawer() {
         binding.drawerLayout.closeDrawer(GravityCompat.START)
     }
 

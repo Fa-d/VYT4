@@ -13,6 +13,15 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_addNewPartyFragment"
             app:destination="@id/addNewPartyFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_itemsFragment"
+            app:destination="@id/itemsFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_businessDashboardFragment"
+            app:destination="@id/businessDashboardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_paymentInFragment"
+            app:destination="@id/paymentInFragment" />
     </fragment>
     <fragment
         android:id="@+id/drawerFragment"
@@ -72,5 +81,32 @@
     <fragment
         android:id="@+id/itemsFragment"
         android:name="dev.faddy.vyt1.fragments.items.ItemsFragment"
-        android:label="ItemsFragment" />
+        android:label="ItemsFragment">
+
+    </fragment>
+    <fragment
+        android:id="@+id/businessDashboardFragment"
+        android:name="dev.faddy.vyt1.fragments.drawerComponents.BusinessDashboardFragment"
+        android:label="fragment_business_dashboard"
+        tools:layout="@layout/fragment_business_dashboard" />
+    <fragment
+        android:id="@+id/paymentInFragment"
+        android:name="dev.faddy.vyt1.fragments.payment_in.PaymentInFragment"
+        android:label="fragment_payment_in"
+        tools:layout="@layout/fragment_payment_in" />
+    <dialog
+        android:id="@+id/dashBoardBottomSheetFragment"
+        android:name="dev.faddy.vyt1.fragments.dashboard.bottomsheets.DashBoardBottomSheetFragment"
+        android:label="fragment_dash_board_bottom_sheet_list_dialog"
+        tools:layout="@layout/fragment_dash_board_bottom_sheet_list_dialog" />
+    <dialog
+        android:id="@+id/paymentInBottomSheet"
+        android:name="dev.faddy.vyt1.fragments.payment_in.bottomsheets.PaymentInBottomSheet"
+        android:label="fragmet_payment_in_bottomsheet"
+        tools:layout="@layout/fragmet_payment_in_bottomsheet" />
+    <dialog
+        android:id="@+id/filterPartyBottomSheetDialogFragment"
+        android:name="dev.faddy.vyt1.fragments.parties.botttomsheet.FilterPartyBottomSheetDialogFragment"
+        android:label="fragment_filter_party_bottom_sheet_dialog_list_dialog"
+        tools:layout="@layout/fragment_filter_party_bottom_sheet_dialog_list_dialog" />
 </navigation>

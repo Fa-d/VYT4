@@ -12,9 +12,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dev.faddy.vyt1.databinding.FragmentDashBoardBottomSheetListDialogBinding
 import kotlin.concurrent.thread
 
-const val ARG_ITEM_COUNT = "item_count"
 
 class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
+    val ARG_ITEM_COUNT = "item_count"
 
     private var _binding: FragmentDashBoardBottomSheetListDialogBinding? = null
     private val binding get() = _binding!!

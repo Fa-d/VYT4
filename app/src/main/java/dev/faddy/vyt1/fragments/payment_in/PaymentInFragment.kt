@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import dev.faddy.vyt1.R
 import dev.faddy.vyt1.databinding.FragmentPaymentInBinding
+import dev.faddy.vyt1.fragments.payment_in.bottomsheets.CashSelectBottomSheet
 import dev.faddy.vyt1.fragments.payment_in.bottomsheets.PaymentInBottomSheet
 import dev.faddy.vyt1.fragments.payment_in.bottomsheets.ShareBottomSheet
 import dev.faddy.vyt1.utils.DatePickerFactory
@@ -49,6 +51,12 @@ class PaymentInFragment : Fragment() {
         }
         binding.buttonShare.setOnClickListener {
             ShareBottomSheet().show(childFragmentManager, "ShareBottomSheet")
+        }
+        binding.cashSelectText.setOnClickListener {
+            CashSelectBottomSheet().show(childFragmentManager, "CashSelectBottomSheet")
+        }
+        binding.settingsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_paymentInFragment_to_paymnetInSettingsFragment)
         }
     }
 

@@ -93,7 +93,14 @@
         android:id="@+id/paymentInFragment"
         android:name="dev.faddy.vyt1.fragments.payment_in.PaymentInFragment"
         android:label="fragment_payment_in"
-        tools:layout="@layout/fragment_payment_in" />
+        tools:layout="@layout/fragment_payment_in" >
+        <action
+            android:id="@+id/action_paymentInFragment_to_addBankAccountFragment2"
+            app:destination="@id/addBankAccountFragment2" />
+        <action
+            android:id="@+id/action_paymentInFragment_to_paymnetInSettingsFragment"
+            app:destination="@id/paymnetInSettingsFragment" />
+    </fragment>
     <dialog
         android:id="@+id/dashBoardBottomSheetFragment"
         android:name="dev.faddy.vyt1.fragments.dashboard.bottomsheets.DashBoardBottomSheetFragment"
@@ -109,4 +116,56 @@
         android:name="dev.faddy.vyt1.fragments.parties.botttomsheet.FilterPartyBottomSheetDialogFragment"
         android:label="fragment_filter_party_bottom_sheet_dialog_list_dialog"
         tools:layout="@layout/fragment_filter_party_bottom_sheet_dialog_list_dialog" />
+    <dialog
+        android:id="@+id/cashSelectBottomSheet"
+        android:name="dev.faddy.vyt1.fragments.payment_in.bottomsheets.CashSelectBottomSheet"
+        android:label="CashSelectBottomSheet" >
+    </dialog>
+    <fragment
+        android:id="@+id/addBankAccountFragment2"
+        android:name="dev.faddy.vyt1.fragments.bankAccount.AddBankAccountFragment"
+        android:label="fragment_add_bank_account"
+        tools:layout="@layout/fragment_add_bank_account" />
+    <dialog
+        android:id="@+id/shareBottomSheet"
+        android:name="dev.faddy.vyt1.fragments.payment_in.bottomsheets.ShareBottomSheet"
+        android:label="ShareBottomSheet" />
+    <fragment
+        android:id="@+id/paymnetInSettingsFragment"
+        android:name="dev.faddy.vyt1.fragments.payment_in.PaymnetInSettingsFragment"
+        android:label="fragment_paymnet_in_settings"
+        tools:layout="@layout/fragment_paymnet_in_settings" >
+        <action
+            android:id="@+id/action_paymnetInSettingsFragment_to_additionalChargesFragment"
+            app:destination="@id/additionalChargesFragment" />
+        <action
+            android:id="@+id/action_paymnetInSettingsFragment_to_transportationDetailsFragment"
+            app:destination="@id/transportationDetailsFragment" />
+        <action
+            android:id="@+id/action_paymnetInSettingsFragment_to_additionalFieldsFragment"
+            app:destination="@id/additionalFieldsFragment" />
+        <action
+            android:id="@+id/action_paymnetInSettingsFragment_to_dueDatesAndPaymentTermsFragment"
+            app:destination="@id/dueDatesAndPaymentTermsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/additionalChargesFragment"
+        android:name="dev.faddy.vyt1.fragments.payment_in.AdditionalChargesFragment"
+        android:label="fragment_additional_charges"
+        tools:layout="@layout/fragment_additional_charges" />
+    <fragment
+        android:id="@+id/transportationDetailsFragment"
+        android:name="dev.faddy.vyt1.fragments.payment_in.TransportationDetailsFragment"
+        android:label="fragment_transportation_details"
+        tools:layout="@layout/fragment_transportation_details" />
+    <fragment
+        android:id="@+id/additionalFieldsFragment"
+        android:name="dev.faddy.vyt1.fragments.payment_in.AdditionalFieldsFragment"
+        android:label="fragment_additional_fields"
+        tools:layout="@layout/fragment_additional_fields" />
+    <fragment
+        android:id="@+id/dueDatesAndPaymentTermsFragment"
+        android:name="dev.faddy.vyt1.fragments.payment_in.DueDatesAndPaymentTermsFragment"
+        android:label="fragment_due_dates_and_payment_terms"
+        tools:layout="@layout/fragment_due_dates_and_payment_terms" />
 </navigation>

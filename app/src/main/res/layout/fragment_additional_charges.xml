@@ -1,14 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.payment_in.AdditionalChargesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/transactionSettingsAppbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_10p"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Additional Charges Settings"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/transactionSettingsAppbarLayout">
+
+        <TextView
+            android:id="@+id/dueDataAndPaymnerTermesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Enable Additional Charges"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/showItemsSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewenableAdditionalCharge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dueDataAndPaymnerTermesTitle" />
+
+        <TextView
+            android:id="@+id/textViewenableAdditionalCharge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:text="Allows you to add additional charges like shipping, packaging, etc. In sale and purchase transactions "
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/showItemsSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dueDataAndPaymnerTermesTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/af1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:text="Additional Charge 1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline50"
+        app:layout_constraintTop_toBottomOf="@+id/lay2" />
+
+    <EditText
+        android:id="@+id/af1ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Some hint"
+        app:layout_constraintBottom_toBottomOf="@+id/af1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline50"
+        app:layout_constraintTop_toTopOf="@+id/af1" />
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/af2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:text="Additional Charge 2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline50"
+        app:layout_constraintTop_toBottomOf="@+id/af1" />
+
+    <EditText
+        android:id="@+id/af2ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Some hint"
+        app:layout_constraintBottom_toBottomOf="@+id/af2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline50"
+        app:layout_constraintTop_toTopOf="@+id/af2" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/af3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:text="Additional Charge 3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline50"
+        app:layout_constraintTop_toBottomOf="@+id/af2" />
+
+    <EditText
+        android:id="@+id/af3ET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Some hint"
+        app:layout_constraintBottom_toBottomOf="@+id/af3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline50"
+        app:layout_constraintTop_toTopOf="@+id/af3" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/doneButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="#046C9F"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="Done"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

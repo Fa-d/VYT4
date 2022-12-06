@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import dev.faddy.vyt1.databinding.FragmentAdditionalChargesBinding
 
 class AdditionalChargesFragment : Fragment() {
@@ -32,7 +33,9 @@ class AdditionalChargesFragment : Fragment() {
     }
 
     private fun initClickListener() {
-
+        binding.backButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun initView() {

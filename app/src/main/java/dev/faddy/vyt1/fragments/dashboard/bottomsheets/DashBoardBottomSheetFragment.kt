@@ -5,16 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import dev.faddy.vyt1.R
 import dev.faddy.vyt1.databinding.FragmentDashBoardBottomSheetListDialogBinding
 import kotlin.concurrent.thread
 
 
 class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
     val ARG_ITEM_COUNT = "item_count"
+
+    private lateinit var salesAdapter: BottomSheetDashBoardAdapter
+    private lateinit var purchaseAdapter: BottomSheetDashBoardAdapter
+    private lateinit var othersAdapter: BottomSheetDashBoardAdapter
+
+    private lateinit var saleRecyclerData: SaleRecyclerData
+    private lateinit var purchaseRecyclerData: PurchaseRecyclerData
+    private lateinit var otherRecyclerData: OthersRecyclerData
 
     private var _binding: FragmentDashBoardBottomSheetListDialogBinding? = null
     private val binding get() = _binding!!
@@ -52,21 +62,80 @@ class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        initData()
         initView()
         initClickListener()
+    }
+
+    private fun initData() {
+        salesAdapter = BottomSheetDashBoardAdapter()
+        purchaseAdapter = BottomSheetDashBoardAdapter()
+        othersAdapter = BottomSheetDashBoardAdapter()
+        saleRecyclerData = SaleRecyclerData()
+        purchaseRecyclerData = PurchaseRecyclerData()
+        otherRecyclerData = OthersRecyclerData()
     }
 
     private fun initClickListener() {
         binding.closeCardView.setOnClickListener {
             this.dismiss()
         }
+        salesAdapter.onItemClicked = { returnedData ->
+            when (returnedData) {
+                saleRecyclerData.saleInvoice -> {
 
+                }
+                saleRecyclerData.paymentIn -> {
+                    findNavController().navigate(R.id.paymentInFragment)
+                    this.dismiss()
+                }
+                saleRecyclerData.crNoteReturn -> {
+
+                }
+                saleRecyclerData.saleOrder -> {
+
+                }
+                saleRecyclerData.estimateQuotation -> {
+
+                }
+                saleRecyclerData.performanceInvoice -> {
+
+                }
+                saleRecyclerData.deliveryChallan -> {
+
+                }
+            }
+        }
+        purchaseAdapter.onItemClicked = { returnedData ->
+            when (returnedData) {
+                purchaseRecyclerData.purchase -> {
+
+                }
+                purchaseRecyclerData.paymentOut -> {
+
+                }
+                purchaseRecyclerData.drNoteReturn -> {
+
+                }
+                purchaseRecyclerData.purchaseOrder -> {
+
+                }
+            }
+        }
+        othersAdapter.onItemClicked = { returnedData ->
+            when (returnedData) {
+                otherRecyclerData.expenses -> {
+
+                }
+                otherRecyclerData.partyToTransfer -> {
+
+                }
+            }
+        }
     }
 
     private fun initView() {
-        val salesAdapter = BottomSheetDashBoardAdapter()
-        val purchaseAdapter = BottomSheetDashBoardAdapter()
-        val othersAdapter = BottomSheetDashBoardAdapter()
+
         with(binding.otherTransactionRecycler) {
             setHasFixedSize(true)
             layoutManager =
@@ -87,24 +156,29 @@ class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
         }
         salesAdapter.intiData(
             listOf(
-                "Sale Invoice",
-                "Payment In",
-                "cr. Note Sale Return",
-                "Sale Order",
-                "Estimate Quotation",
-                "Performance Invoice",
-                "Delivery Challan",
+                saleRecyclerData.saleInvoice,
+                saleRecyclerData.paymentIn,
+                saleRecyclerData.crNoteReturn,
+                saleRecyclerData.saleOrder,
+                saleRecyclerData.estimateQuotation,
+                saleRecyclerData.performanceInvoice,
+                saleRecyclerData.deliveryChallan
             ).toMutableList()
         )
         purchaseAdapter.intiData(
             listOf(
-                "Purchase", "Payment Out", "Dr. Note Purchase Return", "Purchase Order"
+                purchaseRecyclerData.purchase,
+                purchaseRecyclerData.paymentOut,
+                purchaseRecyclerData.paymentOut,
+                purchaseRecyclerData.purchaseOrder
             ).toMutableList()
         )
 
-        othersAdapter.intiData(listOf("Expenses", "Party to Transfer").toMutableList())
-
-
+        othersAdapter.intiData(
+            listOf(
+                otherRecyclerData.expenses, otherRecyclerData.partyToTransfer
+            ).toMutableList()
+        )
     }
 
 
@@ -115,11 +189,32 @@ class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
                     putInt(ARG_ITEM_COUNT, itemCount)
                 }
             }
-
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    data class SaleRecyclerData(
+        val saleInvoice: String = "Sale Invoice",
+        val paymentIn: String = "Payment In",
+        val crNoteReturn: String = "cr. Note Sale Return",
+        val saleOrder: String = "Sale Order",
+        val estimateQuotation: String = "Estimate Quotation",
+        val performanceInvoice: String = "Performance Invoice",
+        val deliveryChallan: String = "Delivery Challan",
+    )
+
+    data class PurchaseRecyclerData(
+        val purchase: String = "Purchase",
+        val paymentOut: String = "Payment Out",
+        val drNoteReturn: String = "Dr. Note Purchase Return",
+        val purchaseOrder: String = "Purchase Order"
+    )
+
+    data class OthersRecyclerData(
+        val expenses: String = "Expenses", val partyToTransfer: String = "Party to Party Transfer"
+    )
+
 }

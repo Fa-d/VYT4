@@ -8,7 +8,7 @@ import dev.faddy.vyt1.databinding.ItemViewBottomsheetItemsBinding
 class BottomSheetDashBoardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var datalist: MutableList<String> = mutableListOf()
-
+    var onItemClicked: ((item: String) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
             ItemViewBottomsheetItemsBinding.inflate(
@@ -30,15 +30,11 @@ class BottomSheetDashBoardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
     internal inner class ViewHolder(val binding: ItemViewBottomsheetItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         init {
-            /* binding.llRootMain.setOnClickListener {
-                 if (absoluteAdapterPosition != RecyclerView.NO_POSITION) {
-                     if (binding.rvSearchChild.visibility == View.VISIBLE) {
-                         binding.rvSearchChild.visibility = View.GONE
-                     } else {
-                         binding.rvSearchChild.visibility = View.VISIBLE
-                     }
-                 }
-             }*/
+            binding.root.setOnClickListener {
+                if (absoluteAdapterPosition != RecyclerView.NO_POSITION) {
+                    onItemClicked?.invoke(datalist[absoluteAdapterPosition])
+                }
+            }
         }
     }
 

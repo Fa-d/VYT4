@@ -1,18 +1,17 @@
-package dev.faddy.vyt1.fragments.parties
+package dev.faddy.vyt1.fragments.dashboard
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import dev.faddy.vyt1.databinding.ItemviewPartiesDashboardBinding
+import dev.faddy.vyt1.databinding.ItemViewPartyItemDetailsBinding
 
-class PartiesDashboardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PartyDetailsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var datalist: MutableList<String> = mutableListOf()
-    var onItemClicked: (() -> Unit)? = null
-
+    var onItemClicked: ((item: String) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
-            ItemviewPartiesDashboardBinding.inflate(
+            ItemViewPartyItemDetailsBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
@@ -22,20 +21,20 @@ class PartiesDashboardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
         if (holder is ViewHolder) {
             val model = datalist[position]
             val binding = holder.binding
-            binding.cusNameText.text = model
+            // binding.itemTV.text = model
         }
     }
 
     override fun getItemCount() = datalist.size
 
-    internal inner class ViewHolder(val binding: ItemviewPartiesDashboardBinding) :
+    internal inner class ViewHolder(val binding: ItemViewPartyItemDetailsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         init {
-             binding.root.setOnClickListener {
-                 if (absoluteAdapterPosition != RecyclerView.NO_POSITION) {
-                     onItemClicked?.invoke()
-                 }
-             }
+            binding.root.setOnClickListener {
+                if (absoluteAdapterPosition != RecyclerView.NO_POSITION) {
+                    onItemClicked?.invoke(datalist[absoluteAdapterPosition])
+                }
+            }
         }
     }
 

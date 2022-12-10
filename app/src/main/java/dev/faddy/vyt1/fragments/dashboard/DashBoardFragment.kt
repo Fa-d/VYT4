@@ -12,7 +12,6 @@ import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import dev.faddy.vyt1.MainActivity
 import dev.faddy.vyt1.R
 import dev.faddy.vyt1.databinding.FragmentDashBoardBinding
-import dev.faddy.vyt1.fragments.dashboard.bottomsheets.DashBoardBottomSheetFragment
 
 
 open class DashBoardFragment : Fragment() {
@@ -49,7 +48,7 @@ open class DashBoardFragment : Fragment() {
         }
 
         binding.addBtnCardView.setOnClickListener {
-            DashBoardBottomSheetFragment.newInstance(5).show(childFragmentManager, "zdf")
+            findNavController().navigate(R.id.dashBoardBottomSheetFragment)
         }
         binding.menuIcon.setOnClickListener {
             (requireActivity() as MainActivity).openDrawer()

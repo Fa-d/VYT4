@@ -22,6 +22,21 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_paymentInFragment"
             app:destination="@id/paymentInFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_dashBoardBottomSheetFragment"
+            app:destination="@id/dashBoardBottomSheetFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_drawerFragment"
+            app:destination="@id/drawerFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_partiesFragment"
+            app:destination="@id/partiesFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_transactionsFragment"
+            app:destination="@id/transactionsFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_partyDetailsFragment"
+            app:destination="@id/partyDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/drawerFragment"
@@ -29,6 +44,9 @@
         android:label="fragment_drawer"
         tools:layout="@layout/fragment_drawer">
 
+        <action
+            android:id="@+id/action_drawerFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -62,6 +80,15 @@
         android:label="fragment_parties"
         tools:layout="@layout/fragment_parties">
 
+        <action
+            android:id="@+id/action_partiesFragment_to_partyDetailsFragment"
+            app:destination="@id/partyDetailsFragment" />
+        <action
+            android:id="@+id/action_partiesFragment_to_bulkPaymentRemainderBottomSheet"
+            app:destination="@id/bulkPaymentRemainderBottomSheet" />
+        <action
+            android:id="@+id/action_partiesFragment_to_filterPartyBottomSheetDialogFragment"
+            app:destination="@id/filterPartyBottomSheetDialogFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNewPartyFragment"
@@ -93,13 +120,22 @@
         android:id="@+id/paymentInFragment"
         android:name="dev.faddy.vyt1.fragments.payment_in.PaymentInFragment"
         android:label="fragment_payment_in"
-        tools:layout="@layout/fragment_payment_in" >
+        tools:layout="@layout/fragment_payment_in">
         <action
             android:id="@+id/action_paymentInFragment_to_addBankAccountFragment2"
             app:destination="@id/addBankAccountFragment2" />
         <action
             android:id="@+id/action_paymentInFragment_to_paymnetInSettingsFragment"
             app:destination="@id/paymnetInSettingsFragment" />
+        <action
+            android:id="@+id/action_paymentInFragment_to_paymentInBottomSheet"
+            app:destination="@id/paymentInBottomSheet" />
+        <action
+            android:id="@+id/action_paymentInFragment_to_cashSelectBottomSheet"
+            app:destination="@id/cashSelectBottomSheet" />
+        <action
+            android:id="@+id/action_paymentInFragment_to_shareBottomSheet"
+            app:destination="@id/shareBottomSheet" />
     </fragment>
     <dialog
         android:id="@+id/dashBoardBottomSheetFragment"
@@ -119,8 +155,7 @@
     <dialog
         android:id="@+id/cashSelectBottomSheet"
         android:name="dev.faddy.vyt1.fragments.payment_in.bottomsheets.CashSelectBottomSheet"
-        android:label="CashSelectBottomSheet" >
-    </dialog>
+        android:label="CashSelectBottomSheet"/>
     <fragment
         android:id="@+id/addBankAccountFragment2"
         android:name="dev.faddy.vyt1.fragments.bankAccount.AddBankAccountFragment"
@@ -134,7 +169,7 @@
         android:id="@+id/paymnetInSettingsFragment"
         android:name="dev.faddy.vyt1.fragments.payment_in.PaymnetInSettingsFragment"
         android:label="fragment_paymnet_in_settings"
-        tools:layout="@layout/fragment_paymnet_in_settings" >
+        tools:layout="@layout/fragment_paymnet_in_settings">
         <action
             android:id="@+id/action_paymnetInSettingsFragment_to_additionalChargesFragment"
             app:destination="@id/additionalChargesFragment" />
@@ -172,4 +207,9 @@
         android:id="@+id/bulkPaymentRemainderBottomSheet"
         android:name="dev.faddy.vyt1.fragments.dashboard.bottomsheets.BulkPaymentRemainderBottomSheet"
         android:label="BulkPaymentRemainderBottomSheet" />
+    <fragment
+        android:id="@+id/partyDetailsFragment"
+        android:name="dev.faddy.vyt1.fragments.dashboard.PartyDetailsFragment"
+        android:label="fragment_party_details"
+        tools:layout="@layout/fragment_party_details" />
 </navigation>

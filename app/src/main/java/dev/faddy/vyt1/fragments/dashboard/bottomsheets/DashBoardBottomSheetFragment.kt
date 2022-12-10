@@ -183,12 +183,11 @@ class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
 
 
     companion object {
-        fun newInstance(itemCount: Int): DashBoardBottomSheetFragment =
-            DashBoardBottomSheetFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_ITEM_COUNT, itemCount)
-                }
+        fun newInstance(): DashBoardBottomSheetFragment = DashBoardBottomSheetFragment().apply {
+            arguments = Bundle().apply {
+                putInt(ARG_ITEM_COUNT, 5)
             }
+        }
     }
 
     override fun onDestroyView() {

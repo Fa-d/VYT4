@@ -11,10 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:src="@drawable/ic_baseline_add_24"
+        android:src="@drawable/ic_baseline_search_24"
         app:layout_constraintBottom_toBottomOf="@+id/newPartyCardView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/newPartyCardView" />
+        app:layout_constraintTop_toTopOf="@+id/newPartyCardView"
+        app:tint="@color/blue" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,19 +31,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:src="@drawable/ic_baseline_add_24"
+        android:background="@drawable/backrectangle_gray_fill"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_filter_list_24"
         app:layout_constraintBottom_toBottomOf="@+id/newPartyCardView"
         app:layout_constraintEnd_toStartOf="@+id/newPartyCardView"
-        app:layout_constraintTop_toTopOf="@+id/newPartyCardView" />
+        app:layout_constraintTop_toTopOf="@+id/newPartyCardView"
+        app:tint="#858896" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/newPartyCardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+
         android:layout_marginEnd="15dp"
         android:foreground="@drawable/backrectangle_blue_blue_fill"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toStartOf="@+id/menuIcon"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -50,14 +55,14 @@
             android:id="@+id/newPartyText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="5dp"
             android:drawableStart="@drawable/ic_baseline_add_24"
             android:drawableTint="@color/blue"
             android:gravity="center"
             android:paddingEnd="10dp"
             android:text="New Party"
-            android:textColor="@color/blue"
-            android:textStyle="bold" />
+            android:textColor="@color/blue" />
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -65,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
-        android:src="@drawable/ic_baseline_add_24"
+        android:src="@drawable/ic_baseline_more_vert_24"
         app:layout_constraintBottom_toBottomOf="@+id/newPartyCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/newPartyCardView" />

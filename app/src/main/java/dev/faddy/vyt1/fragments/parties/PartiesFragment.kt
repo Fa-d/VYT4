@@ -36,9 +36,7 @@ class PartiesFragment : Fragment() {
 
     private fun initClickListners() {
         binding.filterIcon.setOnClickListener {
-            FilterPartyBottomSheetDialogFragment().show(
-                childFragmentManager, "FilterPartyBottomSheetDialogFragment"
-            )
+            findNavController().navigate(R.id.filterPartyBottomSheetDialogFragment)
         }
         binding.menuIcon.setOnClickListener {
             popup.show()
@@ -67,6 +65,9 @@ class PartiesFragment : Fragment() {
         }
         binding.newPartyText.setOnClickListener {
             findNavController().navigate(R.id.action_dashBoardFragment_to_addNewPartyFragment)
+        }
+        partiesAdapter.onItemClicked = {
+            findNavController().navigate(R.id.action_dashBoardFragment_to_partyDetailsFragment)
         }
     }
 

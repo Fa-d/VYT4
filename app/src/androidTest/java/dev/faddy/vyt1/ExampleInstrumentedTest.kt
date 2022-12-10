@@ -1,7 +1,7 @@
 package dev.faddy.vyt1
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.platform.app.InstrumentationRegistryl
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith

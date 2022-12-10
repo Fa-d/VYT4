@@ -46,7 +46,10 @@ class PartiesFragment : Fragment() {
 
         popup.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.bulk_paymnet_remainder -> true
+                R.id.bulk_paymnet_remainder -> {
+                    findNavController().navigate(R.id.bulkPaymentRemainderBottomSheet)
+                    true
+                }
                 R.id.bulk_messages -> true
                 R.id.party_grouping -> true
                 R.id.sort_by_name -> {

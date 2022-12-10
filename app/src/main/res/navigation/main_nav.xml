@@ -168,4 +168,8 @@
         android:name="dev.faddy.vyt1.fragments.payment_in.DueDatesAndPaymentTermsFragment"
         android:label="fragment_due_dates_and_payment_terms"
         tools:layout="@layout/fragment_due_dates_and_payment_terms" />
+    <dialog
+        android:id="@+id/bulkPaymentRemainderBottomSheet"
+        android:name="dev.faddy.vyt1.fragments.dashboard.bottomsheets.BulkPaymentRemainderBottomSheet"
+        android:label="BulkPaymentRemainderBottomSheet" />
 </navigation>

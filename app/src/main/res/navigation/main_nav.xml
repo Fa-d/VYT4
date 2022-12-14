@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_partyDetailsFragment"
             app:destination="@id/partyDetailsFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_bulkMessagesPopupFragment"
+            app:destination="@id/bulkMessagesPopupFragment" />
     </fragment>
     <fragment
         android:id="@+id/drawerFragment"
@@ -89,6 +92,9 @@
         <action
             android:id="@+id/action_partiesFragment_to_filterPartyBottomSheetDialogFragment"
             app:destination="@id/filterPartyBottomSheetDialogFragment" />
+        <action
+            android:id="@+id/action_partiesFragment_to_bulkMessagesPopupFragment"
+            app:destination="@id/bulkMessagesPopupFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNewPartyFragment"
@@ -212,4 +218,8 @@
         android:name="dev.faddy.vyt1.fragments.dashboard.PartyDetailsFragment"
         android:label="fragment_party_details"
         tools:layout="@layout/fragment_party_details" />
+    <dialog
+        android:id="@+id/bulkMessagesPopupFragment"
+        android:name="dev.faddy.vyt1.fragments.parties.BulkMessagesPopupFragment"
+        android:label="BulkMessagesPopupFragment" />
 </navigation>

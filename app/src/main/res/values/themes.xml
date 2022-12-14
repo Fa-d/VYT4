@@ -30,6 +30,18 @@
         <item name="android:colorPrimary">@color/purple_500</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+    <style name="SheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="behavior_draggable">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0.1</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
 
     <style name="CustomMaterialCalendarTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
         <!-- Header Layout -->
@@ -60,6 +72,12 @@
         <item name="android:paddingEnd">0dp</item>
         <item name="android:textColor">@color/black_100</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="MyAlertDialogTheme" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowFixedWidthMajor">90%</item>
+        <item name="windowFixedWidthMinor">90%</item>
     </style>
 
 </resources>

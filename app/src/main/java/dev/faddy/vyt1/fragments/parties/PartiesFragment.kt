@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.faddy.vyt1.R
 import dev.faddy.vyt1.databinding.FragmentPartiesBinding
-import dev.faddy.vyt1.fragments.parties.botttomsheet.FilterPartyBottomSheetDialogFragment
+import dev.faddy.vyt1.databinding.PopupViewBulkMessagesBinding
+
 
 class PartiesFragment : Fragment() {
 
@@ -48,7 +50,32 @@ class PartiesFragment : Fragment() {
                     findNavController().navigate(R.id.bulkPaymentRemainderBottomSheet)
                     true
                 }
-                R.id.bulk_messages -> true
+                R.id.bulk_messages -> {
+                    var popUpBinding: PopupViewBulkMessagesBinding?
+
+                    val dialog = AlertDialog.Builder(requireActivity()).apply {
+                        setView(
+                            PopupViewBulkMessagesBinding.inflate(layoutInflater)
+                                .also { popUpBinding = it }.root
+                        )
+                    }.create()
+
+                    dialog.show()
+
+                    popUpBinding?.nextButton?.setOnClickListener {
+                        dialog.dismiss()
+                    }
+                    popUpBinding?.cancelButton?.setOnClickListener {
+                        dialog.dismiss()
+                    }
+                    dialog.window?.setLayout(
+                        (resources.displayMetrics.widthPixels * 0.95).toInt(),
+                        (resources.displayMetrics.heightPixels * 0.85).toInt()
+                    )
+
+                    popUpBinding?.root?.invalidate()
+                    true
+                }
                 R.id.party_grouping -> true
                 R.id.sort_by_name -> {
                     item.isChecked = !item.isChecked

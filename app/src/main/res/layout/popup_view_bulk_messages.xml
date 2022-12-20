@@ -1,109 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/toplayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#046C9F"
-        android:gravity="center"
-        android:paddingVertical="10dp"
-        android:text="Select Parties To Send Messages"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/theRoot2"
+        android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:foreground="@color/gray_30p"
-        app:layout_constraintBottom_toTopOf="@+id/itemsRecycler"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toplayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/theRoot"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginVertical="10dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/searchIcon"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/toplayout"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:src="@drawable/ic_baseline_search_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="#046C9F"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="Select Parties To Send Messages"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/theCardView"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <androidx.cardview.widget.CardView
+                android:id="@+id/theCardView"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:foreground="@color/gray_30p"
+                app:layout_constraintBottom_toTopOf="@+id/itemsRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/searchIcon"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toplayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp">
+
+                    <ImageView
+                        android:id="@+id/searchIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:src="@drawable/ic_baseline_search_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/searchIcon"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/itemsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/viewthe"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/theCardView" />
+
+            <View
+                android:id="@+id/viewthe"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/gray_30p"
+                app:layout_constraintBottom_toTopOf="@+id/nextButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemsRecycler" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="25dp"
+                android:background="#046C9F"
+                android:elevation="20dp"
+                android:text="Next"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:elevation="20dp"
+                android:paddingHorizontal="20dp"
+                android:text="Cancel"
+                android:textColor="@color/black"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/nextButton"
+                app:layout_constraintEnd_toStartOf="@+id/nextButton"
+                app:layout_constraintTop_toTopOf="@+id/nextButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/itemsRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/viewthe"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <View
-        android:id="@+id/viewthe"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/gray_30p"
-        app:layout_constraintBottom_toTopOf="@+id/nextButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemsRecycler" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="25dp"
-        android:background="#046C9F"
-        android:elevation="20dp"
-        android:text="Next"
-        android:textColor="@color/white"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewthe" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:background="@color/white"
-        android:elevation="20dp"
-        android:paddingHorizontal="20dp"
-        android:text="Cancel"
-        android:textColor="@color/black"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/nextButton"
-        app:layout_constraintEnd_toStartOf="@+id/nextButton"
-        app:layout_constraintTop_toTopOf="@+id/nextButton" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

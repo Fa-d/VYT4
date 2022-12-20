@@ -48,12 +48,15 @@ class PartiesFragment : Fragment() {
                     findNavController().navigate(R.id.bulkPaymentRemainderBottomSheet)
                     true
                 }
+
                 R.id.bulk_messages -> {
                     findNavController().navigate(R.id.bulkMessagesPopupFragment)
                     true
                 }
 
-                R.id.party_grouping -> true
+                R.id.party_grouping -> {
+                    true
+                }
                 R.id.sort_by_name -> {
                     item.isChecked = !item.isChecked
                     item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)

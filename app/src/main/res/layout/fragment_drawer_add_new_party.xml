@@ -26,27 +26,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/profileIconCard"
+            <ImageView
+                android:id="@+id/profileIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:background="@color/white"
-                app:cardCornerRadius="40dp"
-                app:layout_constraintBottom_toBottomOf="@id/changeCompanyText"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/ic_baseline_menu_24"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/companyNameText">
-
-                <ImageView
-                    android:id="@+id/profileIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_baseline_home_24"
-                    app:tint="@color/blue_60p" />
-
-            </androidx.cardview.widget.CardView>
-
+                app:layout_constraintTop_toTopOf="@+id/companyNameText" />
 
             <TextView
                 android:id="@+id/companyNameText"
@@ -54,11 +43,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
                 android:text="New Company"
-                android:textColor="@color/white"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/mobileNumberText"
-                app:layout_constraintStart_toEndOf="@id/profileIconCard"
+                app:layout_constraintStart_toEndOf="@id/profileIcon"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -66,11 +54,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:paddingVertical="5dp"
                 android:text="8801647803753"
-                android:textColor="@color/white"
-                android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/changeCompanyText"
-                app:layout_constraintStart_toEndOf="@id/profileIconCard"
+                app:layout_constraintStart_toEndOf="@id/profileIcon"
                 app:layout_constraintTop_toBottomOf="@+id/companyNameText" />
 
             <TextView
@@ -78,15 +65,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
-                android:drawablePadding="10dp"
-                android:drawableTint="@color/white"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
                 android:text="Change Company"
-                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/profileIconCard"
+                app:layout_constraintStart_toEndOf="@id/profileIcon"
                 app:layout_constraintTop_toBottomOf="@+id/mobileNumberText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -101,11 +84,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:src="@drawable/ic_baseline_vertical_split_24"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/itemText"
@@ -133,8 +115,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/BusinessDashboardText"
@@ -162,8 +143,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/reportsText"
@@ -191,8 +171,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/salesInvoicerecycler"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/salesText"
@@ -209,11 +188,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/salesInvoicerecycler"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/salesInvoicerecycler"
@@ -244,8 +222,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/purchaseRecycler"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/purchaseText"
@@ -262,11 +239,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/purchaseRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/purchaseRecycler"
@@ -295,8 +271,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ExpenseText"
@@ -308,15 +283,15 @@
                 app:layout_constraintStart_toEndOf="@+id/iconOfExpense"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!--            <ImageView
-                            android:id="@+id/ExpenseIconEnd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="20dp"
-                            android:src="@drawable/ic_baseline_add_24"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />-->
+            <ImageView
+                android:id="@+id/ExpenseIconEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_baseline_add_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -334,8 +309,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/cashAndBankRecycler"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/cashAndBankText"
@@ -352,11 +326,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/cashAndBankRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/cashAndBankRecycler"
@@ -386,8 +359,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/OnlineStoreText"
@@ -419,8 +391,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/SyncText"
@@ -448,8 +419,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/SettingsText"
@@ -477,8 +447,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/backUpandRestoreRecycler"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/backupandRestoreText"
@@ -495,11 +464,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/backUpandRestoreRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/backUpandRestoreRecycler"
@@ -534,8 +502,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/premiumText"
@@ -562,8 +529,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/WhatsAppGreetingsText"
@@ -590,8 +556,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/shareOnWhatsAppText"
@@ -619,8 +584,7 @@
                 android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/utilitiesRecycler"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/UtilitiesText"
@@ -637,11 +601,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/utilitiesRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/utilitiesRecycler"
@@ -682,19 +645,17 @@
                 android:text="Help and Support"
                 app:layout_constraintBottom_toTopOf="@+id/helpAndSupportRecycler"
                 app:layout_constraintStart_toEndOf="@+id/iconOfHelpAndSupport"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/HelpAndSupportIconEnd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintBottom_toTopOf="@+id/helpAndSupportRecycler"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/gray_70p" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/helpAndSupportRecycler"

@@ -51,7 +51,7 @@ open class DashBoardFragment : Fragment() {
             findNavController().navigate(R.id.dashBoardBottomSheetFragment)
         }
         binding.menuIcon.setOnClickListener {
-            (requireActivity() as MainActivity).openDrawer()
+            (requireActivity() as MainActivity).openDrawerMain()
         }
 
         binding.takePaymentCardView.setOnClickListener {

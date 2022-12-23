@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_bulkMessagesPopupFragment"
             app:destination="@id/bulkMessagesPopupFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_allPartiesFragment"
+            app:destination="@id/allPartiesFragment" />
     </fragment>
     <fragment
         android:id="@+id/drawerFragment"
@@ -222,4 +225,9 @@
         android:id="@+id/bulkMessagesPopupFragment"
         android:name="dev.faddy.vyt1.fragments.parties.BulkMessagesPopupFragment"
         android:label="BulkMessagesPopupFragment" />
+    <fragment
+        android:id="@+id/allPartiesFragment"
+        android:name="dev.faddy.vyt1.fragments.parties.AllPartiesFragment"
+        android:label="fragment_all_parties"
+        tools:layout="@layout/fragment_all_parties" />
 </navigation>

@@ -82,52 +82,52 @@ class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
         }
         salesAdapter.onItemClicked = { returnedData ->
             when (returnedData) {
-                saleRecyclerData.saleInvoice -> {
+                saleRecyclerData.saleInvoice.itemText -> {
 
                 }
-                saleRecyclerData.paymentIn -> {
+                saleRecyclerData.paymentIn.itemText -> {
                     findNavController().navigate(R.id.paymentInFragment)
                     this.dismiss()
                 }
-                saleRecyclerData.crNoteReturn -> {
+                saleRecyclerData.crNoteReturn.itemText -> {
 
                 }
-                saleRecyclerData.saleOrder -> {
+                saleRecyclerData.saleOrder.itemText -> {
 
                 }
-                saleRecyclerData.estimateQuotation -> {
+                saleRecyclerData.estimateQuotation.itemText -> {
 
                 }
-                saleRecyclerData.performanceInvoice -> {
+                saleRecyclerData.performanceInvoice.itemText -> {
 
                 }
-                saleRecyclerData.deliveryChallan -> {
+                saleRecyclerData.deliveryChallan.itemText -> {
 
                 }
             }
         }
         purchaseAdapter.onItemClicked = { returnedData ->
             when (returnedData) {
-                purchaseRecyclerData.purchase -> {
+                purchaseRecyclerData.purchase.itemText -> {
 
                 }
-                purchaseRecyclerData.paymentOut -> {
+                purchaseRecyclerData.paymentOut.itemText -> {
 
                 }
-                purchaseRecyclerData.drNoteReturn -> {
+                purchaseRecyclerData.drNoteReturn.itemText -> {
 
                 }
-                purchaseRecyclerData.purchaseOrder -> {
+                purchaseRecyclerData.purchaseOrder.itemText -> {
 
                 }
             }
         }
         othersAdapter.onItemClicked = { returnedData ->
             when (returnedData) {
-                otherRecyclerData.expenses -> {
+                otherRecyclerData.expenses.itemText -> {
 
                 }
-                otherRecyclerData.partyToTransfer -> {
+                otherRecyclerData.partyToTransfer.itemText -> {
 
                 }
             }
@@ -196,24 +196,45 @@ class DashBoardBottomSheetFragment : BottomSheetDialogFragment() {
     }
 
     data class SaleRecyclerData(
-        val saleInvoice: String = "Sale Invoice",
-        val paymentIn: String = "Payment In",
-        val crNoteReturn: String = "cr. Note Sale Return",
-        val saleOrder: String = "Sale Order",
-        val estimateQuotation: String = "Estimate Quotation",
-        val performanceInvoice: String = "Performance Invoice",
-        val deliveryChallan: String = "Delivery Challan",
+        val saleInvoice: ItemDetailsHolder = ItemDetailsHolder(
+            "Sale Invoice", R.drawable.ic_baseline_sale_invoice_24
+        ), val paymentIn: ItemDetailsHolder = ItemDetailsHolder(
+            "Payment In", R.drawable.ic_baseline_payment_in_24
+        ), val crNoteReturn: ItemDetailsHolder = ItemDetailsHolder(
+            "cr. Note Sale Return", R.drawable.ic_baseline_sale_return_24
+        ), val saleOrder: ItemDetailsHolder = ItemDetailsHolder(
+            "Sale Order", R.drawable.ic_baseline_upload_file_24
+        ), val estimateQuotation: ItemDetailsHolder = ItemDetailsHolder(
+            "Estimate Quotation", R.drawable.ic_baseline_estimate_24
+        ), val performanceInvoice: ItemDetailsHolder = ItemDetailsHolder(
+            "Performance Invoice", R.drawable.ic_baseline_performance_24
+        ), val deliveryChallan: ItemDetailsHolder = ItemDetailsHolder(
+            "Delivery Challan", R.drawable.ic_baseline_fire_truck_24
+        )
     )
 
     data class PurchaseRecyclerData(
-        val purchase: String = "Purchase",
-        val paymentOut: String = "Payment Out",
-        val drNoteReturn: String = "Dr. Note Purchase Return",
-        val purchaseOrder: String = "Purchase Order"
+        val purchase: ItemDetailsHolder = ItemDetailsHolder(
+            "Purchase", R.drawable.ic_baseline_purchase_24
+        ), val paymentOut: ItemDetailsHolder = ItemDetailsHolder(
+            "Payment Out", R.drawable.ic_baseline_payment_out_24
+        ), val drNoteReturn: ItemDetailsHolder = ItemDetailsHolder(
+            "Dr. Note Purchase Return", R.drawable.ic_baseline_shopping_cart_checkout_24
+        ), val purchaseOrder: ItemDetailsHolder = ItemDetailsHolder(
+            "Purchase Order", R.drawable.ic_baseline_new_label_24
+        )
     )
 
     data class OthersRecyclerData(
-        val expenses: String = "Expenses", val partyToTransfer: String = "Party to Party Transfer"
+        val expenses: ItemDetailsHolder = ItemDetailsHolder(
+            "Expenses", R.drawable.ic_baseline_monetization_on_24
+        ), val partyToTransfer: ItemDetailsHolder = ItemDetailsHolder(
+            "Party to Party Transfer", R.drawable.ic_baseline_transform_24
+        )
+    )
+
+    data class ItemDetailsHolder(
+        val itemText: String = "", val itemResId: Int = 0
     )
 
 }

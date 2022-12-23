@@ -2,12 +2,14 @@ package dev.faddy.vyt1.fragments.dashboard.bottomsheets
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import dev.faddy.vyt1.databinding.ItemViewBottomsheetItemsBinding
 
 class BottomSheetDashBoardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var datalist: MutableList<String> = mutableListOf()
+    private var datalist: MutableList<DashBoardBottomSheetFragment.ItemDetailsHolder> =
+        mutableListOf()
     var onItemClicked: ((item: String) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
@@ -21,7 +23,12 @@ class BottomSheetDashBoardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         if (holder is ViewHolder) {
             val model = datalist[position]
             val binding = holder.binding
-            binding.itemTV.text = model
+            binding.itemTV.text = model.itemText
+            binding.imageOfItem.setImageDrawable(
+                ContextCompat.getDrawable(
+                    binding.root.context, model.itemResId
+                )
+            )
         }
     }
 
@@ -32,13 +39,13 @@ class BottomSheetDashBoardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         init {
             binding.root.setOnClickListener {
                 if (absoluteAdapterPosition != RecyclerView.NO_POSITION) {
-                    onItemClicked?.invoke(datalist[absoluteAdapterPosition])
+                    onItemClicked?.invoke(datalist[absoluteAdapterPosition].itemText)
                 }
             }
         }
     }
 
-    fun intiData(dataP: MutableList<String>) {
+    fun intiData(dataP: MutableList<DashBoardBottomSheetFragment.ItemDetailsHolder>) {
         datalist.clear()
         datalist.addAll(dataP)
         notifyDataSetChanged()

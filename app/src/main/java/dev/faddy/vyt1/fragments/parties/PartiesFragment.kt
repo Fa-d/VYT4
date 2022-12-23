@@ -55,6 +55,7 @@ class PartiesFragment : Fragment() {
                 }
 
                 R.id.party_grouping -> {
+                    findNavController().navigate(R.id.action_dashBoardFragment_to_allPartiesFragment)
                     true
                 }
                 R.id.sort_by_name -> {
